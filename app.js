@@ -7,77 +7,149 @@ function roll() {
     document.getElementById("button").style.display = "none"
     document.getElementById("button1").style.display = "block"
     let val = Math.floor((Math.random() * 6) + 1);
-    document.getElementById("h2").innerHTML = "red got" + " :  " + val;
+    // document.getElementById("h2").innerHTML = "red got" + " :  " + val;
+    document.querySelector("img").style.display = "block";
+
+    document.querySelector(".img").setAttribute("src",
+        "dice" + val + ".png");
     rednum += val;
-    if (rednum == 2) {
-        rednum = 16
-    } else if (rednum == 8) {
-        rednum = 28
-    } else if (rednum == 25) {
-        rednum = 56
-    } else if (rednum == 59) {
-        rednum = 87
-    } else
-    if (rednum == 88) {
-        rednum = 38
-    } else if (rednum == 74) {
-        rednum = 66
-    } else if (rednum == 47) {
-        rednum = 27
-    } else if (rednum == 15) {
-        rednum = 4
-    }
-
-
     if (rednum > 100) {
         rednum -= val;
         prev = "0"
     }
+    let ab = rednum.toString();
+
+    if (rednum == 2 || rednum == 8 || rednum == 25 || rednum == 59) {
+        document.getElementById(ab).classList.remove("second")
+    } else if (rednum == 15 || rednum == 47 || rednum == 74 || rednum == 88) {
+        document.getElementById(ab).classList.remove("first")
+    }
+
     if (rednum >= 100) {
         alert("Red won") // return
         document.getElementById('button').style.display = 'none'
         document.getElementById('button1').style.display = 'none'
         document.getElementById('button2').style.display = 'block'
-        document.getElementById("h2").innerHTML = "Red Won"
+        document.getElementById("h2").innerHTML = "Congratulation <br/>Red Won"
 
 
 
     }
-    let ab = rednum.toString();
-    document.getElementById(ab).style.backgroundColor = "red"
-    document.getElementById(prev).style.backgroundColor = "aqua"
+    document.getElementById(ab).classList.add("test4")
+
+    document.getElementById(prev).classList.remove("test4")
     prev = ab;
+    setTimeout(function() {
+
+        if (rednum == 2) {
+            rednum = 16;
+            let ab = rednum.toString();
+            document.getElementById(prev).classList.add("second")
+
+            document.getElementById(ab).classList.add("test4")
+
+            document.getElementById(prev).classList.remove("test4")
+            prev = ab;
 
 
 
-    console.log(rednum)
+        } else if (rednum == 8) {
+            rednum = 28
+            let ab = rednum.toString();
+            document.getElementById(prev).classList.add("second")
 
+            document.getElementById(ab).classList.add("test4")
+
+            document.getElementById(prev).classList.remove("test4")
+            prev = ab;
+
+        } else if (rednum == 25) {
+            rednum = 56
+            let ab = rednum.toString();
+            document.getElementById(prev).classList.add("second")
+
+
+            document.getElementById(ab).classList.add("test4")
+
+            document.getElementById(prev).classList.remove("test4")
+            prev = ab;
+
+        } else if (rednum == 59) {
+            rednum = 87
+            let ab = rednum.toString();
+            document.getElementById(prev).classList.add("second")
+
+            document.getElementById(ab).classList.add("test4")
+
+            document.getElementById(prev).classList.remove("test4")
+            prev = ab;
+
+        } else
+        if (rednum == 88) {
+            rednum = 38;
+            setTimeout(function() {
+                let ab = rednum.toString();
+
+                document.getElementById(prev).classList.add("first")
+
+                document.getElementById(prev).classList.remove("test4")
+                prev = ab;
+            }, 3000);
+
+        } else if (rednum == 74) {
+            document.getElementById(prev).classList.add("first")
+            rednum = 66;
+            setTimeout(function() {
+                let ab = rednum.toString();
+
+                document.getElementById(ab).classList.add("test4")
+
+                document.getElementById(prev).classList.remove("test4")
+                prev = ab;
+            }, 3000);
+
+        } else if (rednum == 47) {
+            rednum = 27;
+            let ab = rednum.toString();
+            document.getElementById(prev).classList.add("first")
+
+
+            document.getElementById(ab).classList.add("test4")
+
+            document.getElementById(prev).classList.remove("test4")
+            prev = ab;
+
+        } else if (rednum == 15) {
+            rednum = 4;
+            let ab = rednum.toString();
+            document.getElementById(prev).classList.add("first")
+
+
+            document.getElementById(ab).classList.add("test4")
+
+            document.getElementById(prev).classList.remove("test4")
+            prev = ab;
+
+        }
+    }, 1000);
 }
 let prev1 = "0";
+
+
+
+
+// Function for blue roll
 
 function roll1() {
 
     let val = Math.floor((Math.random() * 6) + 1);
-    document.getElementById("h2").innerHTML = "blue got" + ": " + val;
+    // document.getElementById("h2").innerHTML = "blue got" + ": " + val;
+    document.querySelector("img").style.display = "block";
+
+    document.querySelector(".img").setAttribute("src",
+        "dice" + val + ".png");
     bluenum += val;
-    if (bluenum == 2) {
-        bluenum = 16
-    } else if (bluenum == 8) {
-        bluenum = 28
-    } else if (bluenum == 25) {
-        bluenum = 56
-    } else if (bluenum == 59) {
-        bluenum = 87
-    } else
-    if (bluenum == 88) {
-        bluenum = 38
-    } else if (bluenum == 74) {
-        bluenum = 66
-    } else if (bluenum == 47) {
-        bluenum = 27
-    } else if (bluenum == 15) {
-        bluenum = 4
-    }
+
 
     if (bluenum > 100) {
         bluenum -= val;
@@ -96,12 +168,105 @@ function roll1() {
         alert("Blue won");
 
     }
-    // let a=document.getElementById("test3").getAttribute('value');
     let ab = bluenum.toString();
-
-    document.getElementById(ab).style.backgroundColor = "blue"
-    document.getElementById(prev1).style.backgroundColor = "aqua"
+    if (bluenum == 2 || bluenum == 8 || bluenum == 25 || bluenum == 59) {
+        document.getElementById(ab).classList.remove("second")
+    } else if (bluenum == 15 || bluenum == 47 || bluenum == 74 || bluenum == 88) {
+        document.getElementById(ab).classList.remove("first")
+    }
+    document.getElementById(ab).classList.add("test5")
+    document.getElementById(prev1).classList.remove("test5")
     prev1 = ab;
+    setTimeout(function() {
+
+        if (bluenum == 2) {
+            bluenum = 16;
+            let ab = bluenum.toString();
+            document.getElementById(prev1).classList.add("second")
+
+            document.getElementById(ab).classList.add("test5")
+
+            document.getElementById(prev1).classList.remove("test5")
+            prev1 = ab;
+
+
+
+        } else if (bluenum == 8) {
+            bluenum = 28
+            let ab = bluenum.toString();
+            document.getElementById(prev1).classList.add("second")
+
+            document.getElementById(ab).classList.add("test5")
+
+            document.getElementById(prev1).classList.remove("test5")
+            prev1 = ab;
+
+        } else if (bluenum == 25) {
+            bluenum = 56
+            let ab = bluenum.toString();
+            document.getElementById(prev1).classList.add("second")
+
+
+            document.getElementById(ab).classList.add("test5")
+
+            document.getElementById(prev1).classList.remove("test5")
+            prev1 = ab;
+
+        } else if (bluenum == 59) {
+            bluenum = 87
+            let ab = bluenum.toString();
+            document.getElementById(prev1).classList.add("second")
+
+            document.getElementById(ab).classList.add("test5")
+
+            document.getElementById(prev1).classList.remove("test5")
+            prev1 = ab;
+
+        } else
+        if (bluenum == 88) {
+            bluenum = 38;
+            let ab = bluenum.toString();
+
+            document.getElementById(prev1).classList.add("first")
+
+            document.getElementById(prev1).classList.remove("test5")
+            prev1 = ab;
+
+        } else if (bluenum == 74) {
+            document.getElementById(prev1).classList.add("first")
+            bluenum = 66;
+            let ab = bluenum.toString();
+
+            document.getElementById(ab).classList.add("test5")
+
+            document.getElementById(prev1).classList.remove("test5")
+            prev1 = ab;
+
+        } else if (bluenum == 47) {
+            bluenum = 27;
+            let ab = bluenum.toString();
+            document.getElementById(prev1).classList.add("first")
+
+
+            document.getElementById(ab).classList.add("test5")
+
+            document.getElementById(prev1).classList.remove("test5")
+            prev1 = ab;
+
+        } else if (bluenum == 15) {
+            bluenum = 4;
+            let ab = bluenum.toString();
+            document.getElementById(prev1).classList.add("first")
+
+
+            document.getElementById(ab).classList.add("test5")
+
+            document.getElementById(prev1).classList.remove("test5")
+            prev1 = ab;
+
+        }
+    }, 1000);
+
 
 
 

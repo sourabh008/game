@@ -1,15 +1,29 @@
 .main {
-    width: 58%;
+    width: 68%;
     height: 85.5%;
     margin: 2%;
     border: 1px solid black;
+    /* background-color: aqua; */
 }
 
 .test {
     width: 100px;
     height: 60px;
-    background-color: aqua;
-    border: 1px solid black
+    border: 1px solid black;
+}
+
+.test4 {
+    background-image: url('red.png');
+    background-repeat: no-repeat;
+    background-size: 90px 80px;
+    /* margin: 10px */
+}
+
+.test5 {
+    background-image: url('blue.png');
+    background-repeat: no-repeat;
+    background-size: 90px 90px;
+    /* margin: 10px */
 }
 
 .test1 {
@@ -24,7 +38,7 @@
 }
 
 .player_section {
-    margin: 6%;
+    margin-top: 6%;
 }
 
 #button2 {
@@ -74,4 +88,21 @@
 .snake {
     color: red;
     font-weight: bold;
+}
+
+.second {
+    background-image: url("ladder.jpeg");
+    background-repeat: no-repeat;
+    background-size: 90px 100px;
+}
+
+.first {
+    background-image: url("snake.jpeg");
+    background-repeat: no-repeat;
+    background-size: 90px 100px;
+}
+
+.img {
+    margin: 10px;
+    display: none;
 }
