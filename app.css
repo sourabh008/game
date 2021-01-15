@@ -1,0 +1,26 @@
+.main{
+    width:53%;
+    height: 85.5%;
+    margin:5%;
+    border:1px solid black;
+}
+.test{
+    width:70px;
+    height: 50px;
+    background-color: aqua;
+    border:1px solid black
+}
+.test1{
+    display:flex;
+    flex-direction: row;
+    
+}
+.top{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+
+}
+.player_section{
+    margin: 6%;
+}
