@@ -1,8 +1,39 @@
+    .top {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .initial {
+        width: 3.5%;
+        margin-top: 1%;
+        /* border: 1px solid black */
+    }
+    
+    .red1 {
+        /* border: 1px solid black; */
+        background-image: url('red.png');
+        background-repeat: no-repeat;
+        background-size: 30px 30px;
+        width: 50px;
+        height: 30px;
+        display: block;
+    }
+    
+    .blue1 {
+        /* border: 1px solid black; */
+        background-image: url('blue.png');
+        background-repeat: no-repeat;
+        background-size: 26px 26px;
+        width: 50px;
+        height: 40px;
+        display: block;
+    }
+    
     .main {
-        width: 68%;
+        width: 63%;
         height: 85.5%;
         margin: 2%;
-        border: 1px solid black;
+        margin-left: 0%;
         /* background-color: aqua; */
     }
     
@@ -15,14 +46,17 @@
     .test4 {
         background-image: url('red.png');
         background-repeat: no-repeat;
-        background-size: 90px 80px;
+        background-size: 82px 70px;
         /* margin: 10px */
     }
     
     .test5 {
         background-image: url('blue.png');
         background-repeat: no-repeat;
-        background-size: 90px 90px;
+        background-size: 75px 66px;
+        /* height: 60px; */
+        /* background-size: contain, cover; */
+        /* background-size: auto; */
         /* margin: 10px */
     }
     
@@ -68,7 +102,7 @@
     #button1 {
         width: 100px;
         height: 50px;
-        background-color: blue;
+        background-color: black;
         color: white;
         border: none;
         display: none;
